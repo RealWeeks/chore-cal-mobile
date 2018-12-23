@@ -22,6 +22,19 @@ export default {
   components: {
     QDatetimePicker
   },
+  created () {
+    this.$store.dispatch('GET_GROUPS')
+  },
+  computed: {
+    groups () {
+      return this.$store.state.groups
+    }
+  },
+  watch: {
+    groups (groups) {
+      debugger
+    }
+  },
   methods: {
   },
   data () {

@@ -29,10 +29,10 @@ const store = new Vuex.Store({
     },
     SET_TOKEN (state, data) {
       state.token = data
+    },
+    SET_GROUPS (state, data) {
+      state.groups = data
     }
-    // SET_STATUS (state, data) {
-    //   state.token = data
-    // }
   },
   actions: {
     SIGN_UP ({ commit }, data) {
@@ -104,8 +104,7 @@ const store = new Vuex.Store({
       }})
         .then((response) => {
           if (response.status === 200) {
-            debugger
-            // commit('SET_MESSAGE', response.data.status)
+            commit('SET_GROUPS', response.data.groups)
           } else {
             // handle error
           }

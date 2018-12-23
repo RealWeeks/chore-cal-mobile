@@ -42,6 +42,8 @@ export default {
   name: 'signup',
   methods: {
     handleSignUp () {
+      LocalStorage.set('token', '')
+      LocalStorage.set('email', '')
       if (this.email.length && this.password.length) {
         let data = { email: this.email, password: this.password }
         this.$store.dispatch('SIGN_UP', data)
@@ -73,6 +75,7 @@ export default {
     },
     token () {
       if (this.token) {
+        debugger
         LocalStorage.set('token', this.token)
         LocalStorage.set('email', this.useremail)
         this.$q.notify({message: 'Signed in', type: 'positive', position: 'top'})
