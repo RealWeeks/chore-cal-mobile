@@ -41,9 +41,9 @@
           <q-item-side icon="code" />
           <q-item-main label="Add event" sublabel="add an event" />
         </q-item>
-        <q-item @click.native="openURL('https://discord.gg/5TDhbDg')">
+        <q-item @click.native="handleGroupCreateView">
           <q-item-side icon="chat" />
-          <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg" />
+          <q-item-main label="Create Group" sublabel="create a group" />
         </q-item>
         <q-item @click.native="openURL('http://forum.quasar-framework.org')">
           <q-item-side icon="record_voice_over" />
@@ -78,6 +78,9 @@ export default {
     },
     handleEventView () {
       this.$router.push('addevent')
+    },
+    handleGroupCreateView () {
+      this.$router.push('groupname')
     }
   },
   computed: {
